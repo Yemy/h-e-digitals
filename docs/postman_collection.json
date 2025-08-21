@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "CPD Platform API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Publish Course (instructor)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "{{baseUrl}}/api/courses/<id>/publish", "host": ["{{baseUrl}}"], "path": ["api","courses","<id>","publish"] }
+      }
+    },
+    {
+      "name": "Create Course (instructor)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"title\": \"New Course\", \"slug\": \"new-course\", \"description\": \"...\" }" },
+        "url": { "raw": "{{baseUrl}}/api/courses/create", "host": ["{{baseUrl}}"], "path": ["api","courses","create"] }
+      }
+    },
+    {
+      "name": "Enroll",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"courseId\": \"<courseId>\" }" },
+        "url": { "raw": "{{baseUrl}}/api/enroll", "host": ["{{baseUrl}}"], "path": ["api","enroll"] }
+      }
+    },
+    {
+      "name": "Progress",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"lessonId\": \"<lessonId>\", \"completed\": true }" },
+        "url": { "raw": "{{baseUrl}}/api/progress", "host": ["{{baseUrl}}"], "path": ["api","progress"] }
+      }
+    },
+    {
+      "name": "Submit Quiz",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"quizId\": \"<quizId>\", \"answers\": [] }" },
+        "url": { "raw": "{{baseUrl}}/api/quiz/submit", "host": ["{{baseUrl}}"], "path": ["api","quiz","submit"] }
+      }
+    }
+    ,
+    {
+      "name": "Create Quiz",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"moduleId\": \"<moduleId>\", \"title\": \"Sample Quiz\", \"questions\": [] }" },
+        "url": { "raw": "{{baseUrl}}/api/quizzes/create", "host": ["{{baseUrl}}"], "path": ["api","quizzes","create"] }
+      }
+    },
+    {
+      "name": "Create Lesson",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"moduleId\": \"<moduleId>\", \"title\": \"New Lesson\" }" },
+        "url": { "raw": "{{baseUrl}}/api/lessons/create", "host": ["{{baseUrl}}"], "path": ["api","lessons","create"] }
+      }
+    },
+    {
+      "name": "Update Lesson",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"title\": \"Updated\", \"content\": \"...\" }" },
+        "url": { "raw": "{{baseUrl}}/api/lessons/<id>/update", "host": ["{{baseUrl}}"], "path": ["api","lessons","<id>","update"] }
+      }
+    },
+    {
+      "name": "Update Module",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"title\": \"Updated Module\", \"description\": \"...\" }" },
+        "url": { "raw": "{{baseUrl}}/api/modules/<id>/update", "host": ["{{baseUrl}}"], "path": ["api","modules","<id>","update"] }
+      }
+    },
+    {
+      "name": "Delete Module",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/modules/<id>/delete", "host": ["{{baseUrl}}"], "path": ["api","modules","<id>","delete"] }
+      }
+    },
+    {
+      "name": "Request Withdrawal",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"amount\": 100, \"method\": \"BANK\" }" },
+        "url": { "raw": "{{baseUrl}}/api/withdrawals/request", "host": ["{{baseUrl}}"], "path": ["api","withdrawals","request"] }
+      }
+    },
+    {
+      "name": "Approve Withdrawal (admin)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"id\": \"<withdrawalId>\" }" },
+        "url": { "raw": "{{baseUrl}}/api/admin/withdrawals/approve", "host": ["{{baseUrl}}"], "path": ["api","admin","withdrawals","approve"] }
+      }
+    },
+    {
+      "name": "Send Notification",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"userId\": \"<userId>\", \"title\": \"Hello\", \"message\": \"You have a message\" }" },
+        "url": { "raw": "{{baseUrl}}/api/notifications/send", "host": ["{{baseUrl}}"], "path": ["api","notifications","send"] }
+      }
+    },
+    {
+      "name": "Instructor Earnings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/instructor/earnings", "host": ["{{baseUrl}}"], "path": ["api","instructor","earnings"] }
+      }
+    },
+    {
+      "name": "Admin Analytics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/admin/analytics", "host": ["{{baseUrl}}"], "path": ["api","admin","analytics"] }
+      }
+    }
+    ,
+    {
+      "name": "Request Withdrawal",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"amount\": 100, \"method\": \"BANK\" }" },
+        "url": { "raw": "{{baseUrl}}/api/withdrawals/request", "host": ["{{baseUrl}}"], "path": ["api","withdrawals","request"] }
+      }
+    },
+    {
+      "name": "Send Notification",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"userId\": \"<userId>\", \"title\": \"Hello\", \"message\": \"You have a message\" }" },
+        "url": { "raw": "{{baseUrl}}/api/notifications/send", "host": ["{{baseUrl}}"], "path": ["api","notifications","send"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ]
+}
