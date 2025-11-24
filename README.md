@@ -1,4 +1,4 @@
-# CPD E-Training & Certification (Next.js + Prisma + Tailwind)
+# CPD E-Training & Certification (Next.js + Prisma + Tailwind + Laravel backend)
 
 This repository is a scaffolded CPD e-training and certification platform built with Next.js (App Router), Prisma, PostgreSQL, TailwindCSS and TypeScript. It includes core models, authentication (NextAuth), payments (Stripe), certificate generation, quiz handling, and API routes.
 
